@@ -1,0 +1,55 @@
+BreakBricks Project 1
+Matthew Ngoy | TECH 3650 | October 13, 2026
+
+Experience/place link: https://www.roblox.com/games/104045118137429
+Inspected build: version 82. Instructor access to the published link still needs checking.
+
+DESIGN BRIEF
+
+Game and player goal
+BreakBricks is a small Red-versus-Blue capture-the-flag experience. The player steals the enemy flag and brings it back to their own flag while their team's flag is still at home. I wanted short team matches that combine crossing an open arena, climbing to rooftop flags, and defending against the other team.
+
+Core mechanic and completion
+Players touch an enemy flag to carry it, then touch their own flag to capture. The first team to three captures wins. A round also ends after five minutes: the higher score wins, or equal scores produce a tie. During a ten-second intermission, players receive ForceFields and cannot collect flags. A new round resets captures and moves both flags to their other marked locations. Player spawn pads stay fixed.
+
+Environment and scope
+The current arena has two Red bases, two Blue bases, an open central area, cover, and fixed team spawns. Small platforms inside the bases lead toward the roofs. Each team has two hand-placed flag markers. Must-have features are a complete capture loop, team spawns, anchored structures, score feedback, and repeatable rounds. Extra scenery, more flag positions, and more modes are optional. The project uses one CTF server script and the existing ClassicSword tool.
+
+Scripted feature
+The flag system starts when a part of a living player's character touches a flag. The server checks the player's team and whether the flag is already carried. For an enemy flag, it attaches the flag to the player's back with a WeldConstraint and records the flag's team in a CarryingFlag Attribute. Touching the player's own flag while it is home awards a capture, increases the team score, and returns the stolen flag. Death or respawning also returns it. The player sees the flag move with them, a harmless explosion effect, and updated leaderboard values. Three team captures end the round and activate intermission protection.
+
+PLAYTESTING AND AI VERIFICATION
+
+Classmate playtest and revision
+Classmates played the early game. They pointed out loose, unanchored parts and a bare map, and stressed that the teams needed bases. They liked the idea of flags moving between locations and thought the scope was feasible. I used that feedback to prioritize anchoring and bases. The current build has four color-coded base models with anchored structural parts. These changes give each team a recognizable area and make the level more complete. Tester names and the exact test date were not recorded.
+
+Development testing
+An October 7 Codex test of version 37 confirmed pickup, captures, and round reset, but also recorded a nil-parent error in the flag-touch callback. On October 13, Codex inspected version 82 through the Roblox Studio MCP and tested the newer build. Pickup, three captures, win credit, intermission protection, blocked intermission pickups, score reset, changed flag locations, death return, and Spectator rejection worked in the tested session. A later natural five-minute timeout produced a tie, kept wins/losses unchanged, and restarted the round. No script errors appeared in that session's captured Output.
+
+Limits and next revision
+The automated capture checks used targeted character positioning; they do not establish multiplayer balance or prove the full rooftop route. Normal movement reached a base interior and the first few platforms, but a later scripted jump failed. My next priorities are clearer rules and round feedback, another ordinary playthrough of the complete climbing route, and cleaning up the remaining loose part.
+
+AI tools and suggestions
+I used Claude for CTF scripting and troubleshooting, and ChatGPT/Codex for inspection, testing, and assignment preparation. My earlier requests asked for manually adjustable flag locations, readable code, Attributes instead of a custom state table, and no custom pickup GUI. AI suggested the marker-based flag system and round logic. I requested the Attributes approach and removed the generated pickup GUI from the design.
+
+Verification and attribution
+Verification included my earlier Studio development screenshots and the dated Codex Studio checks described above. The October 13 assignment draft was compared with the live version 82 script and saved conversations. AI operated the automated checks; they are separate from the classmate playtest. The CTF code also credits HowToRoblox tutorial ideas, and ClassicSword contains third-party author credits. This is AI-assisted work, not a claim that I wrote every line unaided.
+
+PROCESS EVIDENCE FROM OCTOBER 6
+
+1. Early prototype and debugging, October 6. The original Studio screenshot shows the sparse arena, team leaderboard, and Output messages locating the flag markers. At this stage I was troubleshooting flags that did not look or appear as intended.
+Screenshot: evidence/05_Early_Prototype_2026-10-06.png
+
+2. Early capture test, October 6. This original screenshot shows one capture on the leaderboard and a visible red flag object. It documents the mechanic during development, before the later base structures were present.
+Screenshot: evidence/06_Early_Capture_Test_2026-10-06.png
+
+PROCESS EVIDENCE FROM THE CURRENT BUILD
+
+3. Current map, October 13, version 82. Four Red/Blue bases and additional cover now occupy the arena. Studio inspection confirmed that all parts in those four base models were anchored.
+Screenshot: evidence/01_Current_Map_2026-10-13.png
+
+4. Scripted pickup check, October 13. Codex positioned the test character at the Blue flag. The flag attached to the character and CarryingFlag became Blue. This screenshot documents an AI-operated mechanic test, not a classmate playtest.
+Screenshot: evidence/03_Flag_Pickup_Playtest.png
+
+Before submitting, review the wording so you can explain it in your own words, and attach the playable place link or saved Studio project as your instructor directs.
+

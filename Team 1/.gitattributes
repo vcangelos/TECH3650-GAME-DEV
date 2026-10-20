@@ -1,0 +1,5 @@
+# Keep the submitted artifacts byte-for-byte identical to the saved package.
+*.pdf binary
+*.png binary
+*.txt -text
+*.luau -text
