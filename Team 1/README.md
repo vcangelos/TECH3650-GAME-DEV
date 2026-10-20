@@ -4,7 +4,9 @@
 
 **Project:** Project 1 — Capture the Flag
 
-**Documented build:** Studio version 82, inspected October 13, 2026
+**Report build:** Studio version 82, inspected October 13, 2026
+
+**Saved place:** `breakbricks_proj1.rbxl`, saved October 16, 2026
 
 **Experience:** https://www.roblox.com/games/104045118137429
 
@@ -12,6 +14,7 @@ Steal the opposing team's flag and return it to your own flag while yours is hom
 
 ## Files
 
+- [Roblox place file](breakbricks_proj1.rbxl): download and open in Roblox Studio to inspect the map and game scripts.
 - [Project report](BreakBricks_Project1_Submission.pdf): design, implementation, playtesting, AI attribution, and four process screenshots.
 - [Editable report](BreakBricks_Project1_Editable_Text.txt).
 - [CTF server script](source/CTFServer_v82.server.luau): unchanged snapshot from version 82.
@@ -19,9 +22,9 @@ Steal the opposing team's flag and return it to your own flag while yours is hom
 
 ## Access and testing
 
-The script belongs in `ServerScriptService` and depends on the existing teams, map, spawns, and flag markers. This folder does not contain a complete `.rbxl` place file. Instructor access to the experience link has not been verified.
+The `.rbxl` contains the map and game scripts. The separate server script is the historical version-82 snapshot used for the report; it belongs in `ServerScriptService`. Instructor access to the online experience link has not been verified.
 
-The report distinguishes the earlier classmate playtest from AI-operated Studio checks. Those checks covered individual mechanics and round transitions; full-route traversal and multiplayer balance remain unverified.
+The report distinguishes the earlier classmate playtest from AI-operated Studio checks. Those checks covered individual mechanics and round transitions; full-route traversal and multiplayer balance remain unverified. The October 16 place file has not had a new Studio playtest as part of this upload.
 
 ## Attribution
 
